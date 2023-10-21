@@ -36,23 +36,67 @@ Before getting started, ensure you have the following in place:
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/s3iam.png?raw=true)
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/translateiam.png?raw=true)
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/cwiam.png?raw=true)
-
-
+    - Once you've added the proper permissions, click next, and lets give this role a name. For Eg. `LambdaTranslate`
+    - Finally scroll down and click `Create Role`
 
       
-### 3. Write Lambda Function Code
-- In your Lambda function code, implement the logic to:
-  - Retrieve documents from the input S3 bucket.
-  - Use AWS Translate to translate the documents.
-  - Store the translated documents in the output S3 bucket.
+### 3. Setting Up Lambda Function
+  - Lets go to the Lambda service and click `Create Function`
+  - Make the function set to `Author From Scratch`
+  - Name your function. Eg. `DocTranslator`
+  - For Runtime select `Python 3.9`
+  - In Permissions click `Change Default Execution Role` and under that click `Use an Existing Role`. Then Select the IAM Role we made earlier you can find it through           search by typing in its name eg. LambdaTranslate
+  - Once you found the role and selected it, Click `Create Function`
+  - After your Function has successfully created, click `Add Trigger` and select the trigger to be `S3`, and select the S3 Input Bucket. Eg. `s3doc-inputbucket-2843`
+  - Finally scroll down and acknowledge the recursivity warning and click add. Note: The acknowledgement is stating that if you select your bucket as the input and output bucket, it could cause your function to be in an infinite loop. For Eg. If i put an object(eg. image) in our bucket it would trigger the lambda function and then output it to the same bucket therefore triggering our function again resulting in a recursive and infinite loop.
 
-## AWS Translate Integration
-### 4. Using AWS Translate
-- In your Lambda function, integrate with AWS Translate. You'll need to:
-  - Set up the Translate service.
-  - Configure the translation settings.
-  - Translate documents using the service.
+## Code For Our Function
+### 5. 
+- In your Lambda function, click the code section. Delete the existing code and copy/paste this into it.
+```
+import json
+import boto3
 
+s3_client = boto3.client(service_name='s3')
+translate = boto3.client('translate')
+
+
+
+def translate_text(text, lang_code):
+    result = translate.translate_text(
+        Text=text,
+        SourceLanguageCode='auto',
+        TargetLanguageCode=lang_code
+    )
+    return result['TranslatedText']
+
+
+def lambda_handler(event, context):
+    file_name = event['Records'][0]['s3']['object']['key']
+    bucketName=event['Records'][0]['s3']['bucket']['name']
+    outfile="s3://outputtranslateddoc/{}".format(file_name)
+    print("Event details : ",event)
+    print("Input File Name : ",file_name)
+    print("Input Bucket Name : ",bucketName)
+    print("Output File Name : ",outfile)
+    # get S3 object
+    result = s3_client.get_object(Bucket=bucketName, Key=file_name) 
+    #Read a text file line by line using splitlines object
+    final_document_array = ""
+    for line in result["Body"].read().splitlines():
+        each_line = line.decode('utf-8')
+        print("Input Line : ",each_line)
+        if(each_line!=''):
+            translated=translate_text(each_line, 'bn')
+            print("After translation : ",translated)
+            final_document_array+=translated
+            final_document_array+='\n\n'
+    s3_client.put_object(Body=final_document_array, Bucket='outputtranslateddoc', Key=file_name)
+    print("Done")
+```
+
+
+  
 ## Deployment
 ### 5. Deploy the Lambda Function
 - Deploy your Lambda function to AWS using the AWS Management Console, AWS CLI, or an automation tool of your choice.
