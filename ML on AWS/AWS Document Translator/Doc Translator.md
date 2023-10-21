@@ -94,7 +94,9 @@ def lambda_handler(event, context):
     s3_client.put_object(Body=final_document_array, Bucket='outputtranslateddoc', Key=file_name)
     print("Done")
 ```
-- On this line 1 `outfile="s3://outputtranslateddoc/{}".format(file_name)` change the name of the s3 output bucket to match the name of your's, eg. `s3://myoutputbucket` and leave the rest.
+- On this line `outfile="s3://outputtranslateddoc/{}".format(file_name)` change the name of the s3 output bucket to match the name of your's, eg. `s3://myoutputbucket` and 
+on the second to last line `s3_client.put_object(Body=final_document_array, Bucket='outputtranslateddoc', Key=file_name)` change the `Bucket='outputtranslateddoc'` to your the name of your output bucket eg. `Bucket='myoutputbucket'`
+
 - I would highly recommend you try reading line by line and understanding what this code does, even if you don't know python.
   
 ## Deployment
