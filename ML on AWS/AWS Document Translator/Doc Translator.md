@@ -13,7 +13,7 @@ Before getting started, ensure you have the following in place:
 - **Input S3 Bucket:** Set up an S3 bucket for storing input documents.
   - Lets name the our bucket: s3doc-inputbucket-{random numbers}. eg s3doc-inputbucket-2843. The random numbers at the end will ensure the name is globally unique.
   - Put the S3 Bucket in the us-east-1 region or a region close to you
-    ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/s3configuration.png?raw=true)
+![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/s3configuration.png?raw=true)
   - Once you have added a name and appropriate region, leave all the default setting and scroll down to the bottom and click `Create Bucket`
     
 ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/createbucket.png?raw=true)
