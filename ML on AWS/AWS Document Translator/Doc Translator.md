@@ -32,9 +32,11 @@ Before getting started, ensure you have the following in place:
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/IAM.png?raw=true)
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/createrole.png?raw=true)
     - Next create the role for an AWS Service and make it for a Lambda Function
-    - To this IAM Role lets attach the `S3FullAccess`  and `TranslateFullAccess` policy. Note: Giving Full Access to any entity in AWS is usually never recommened nor best        practice, but for the ease of this project we will do so.
+    - To this IAM Role lets attach the `S3FullAccess`, `TranslateFullAccess` and `CloudwatchFullAccess` policy. Note: Giving Full Access to any entity in AWS is usually never recommened nor best        practice, but for the ease of this project we will do so.
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/s3iam.png?raw=true)
       ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/translateiam.png?raw=true)
+      ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/cwiam.png?raw=true)
+
 
 
       
