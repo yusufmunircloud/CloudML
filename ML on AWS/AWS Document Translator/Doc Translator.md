@@ -87,7 +87,7 @@ def lambda_handler(event, context):
         each_line = line.decode('utf-8')
         print("Input Line : ",each_line)
         if(each_line!=''):
-            translated=translate_text(each_line, 'bn')
+            translated=translate_text(each_line, 'es')
             print("After translation : ",translated)
             final_document_array+=translated
             final_document_array+='\n\n'
@@ -97,6 +97,7 @@ def lambda_handler(event, context):
 - On this line `outfile="s3://outputtranslateddoc/{}".format(file_name)` change the name of the s3 output bucket to match the name of your's, eg. `s3://myoutputbucket` and 
 on the second to last line `s3_client.put_object(Body=final_document_array, Bucket='outputtranslateddoc', Key=file_name)` change the `Bucket='outputtranslateddoc'` to your the name of your output bucket eg. `Bucket='myoutputbucket'`
 
+- This Lambda Function will transform your input file into spanish and output it to the output s3 bucket.
 - I would highly recommend you try reading line by line and understanding what this code does, even if you don't know python.
   
 ## Deployment
@@ -106,7 +107,7 @@ on the second to last line `s3_client.put_object(Body=final_document_array, Buck
 ## Testing
 ### 6. Test the Translation
 - To ensure everything works as expected, test the translation process. You can:
-  - Upload sample documents to the input S3 bucket.
+  - Upload some sample .txt files to the input S3 bucket.
   - Monitor the Lambda function's execution and check the translated documents in the output S3 bucket.
   - Verify the accuracy of the translations.
 
