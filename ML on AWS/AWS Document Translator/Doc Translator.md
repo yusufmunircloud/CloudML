@@ -95,11 +95,11 @@ def lambda_handler(event, context):
     print("Done")
 ```
 
-
+- I would highly recommend you try reading line by line and understanding what this code does, even if you don't know python.
   
 ## Deployment
 ### 5. Deploy the Lambda Function
-- Deploy your Lambda function to AWS using the AWS Management Console, AWS CLI, or an automation tool of your choice.
+- Once we have put our code into the Lambda Function code section, click `Deploy`
 
 ## Testing
 ### 6. Test the Translation
@@ -108,14 +108,7 @@ def lambda_handler(event, context):
   - Monitor the Lambda function's execution and check the translated documents in the output S3 bucket.
   - Verify the accuracy of the translations.
 
-## Troubleshooting
-### 7. Troubleshooting Tips
-- If you encounter issues during the project, here are some common troubleshooting tips and solutions to help you resolve them.
 
 ## Conclusion
 Congratulations! You've successfully set up an AWS Document Translator project using Lambda, S3 buckets, and AWS Translate. This system can be a valuable asset for document translation tasks.
 
-## References
-- Include links to AWS documentation and other resources you used during the project for further reference.
-
-Feel free to customize this GitHub .md file with specific details, code examples, and additional explanations as needed. Good luck with your project!
