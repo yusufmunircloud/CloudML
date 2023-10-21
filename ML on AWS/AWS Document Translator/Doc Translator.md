@@ -26,10 +26,11 @@ Before getting started, ensure you have the following in place:
 
 
 
-### 2. Configure Lambda Function
-- **Permissions:** Configure permissions for the Lambda function to interact with S3 buckets and AWS Translate
-- **IAM Role:** Create an IAM role for the Lambda function with the required policies.
-- **Trigger:** Define the trigger for the Lambda function. You can set it to be triggered by S3 bucket events.
+### 2. Configure Lambda Function's IAM Execution Role
+- **Permissions:** Setup the necessary permissions for the Lambda Function
+    - Lets go to the IAM service and under the Roles section click `Create Role`
+      ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/IAM.png?raw=true)
+      ![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/general/createrole.png?raw=true)
 
 ### 3. Write Lambda Function Code
 - In your Lambda function code, implement the logic to:
