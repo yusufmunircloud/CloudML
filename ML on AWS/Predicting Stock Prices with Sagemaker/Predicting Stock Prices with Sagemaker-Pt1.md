@@ -2,7 +2,7 @@
 
 ## Overview
 
-This comprehensive documentation guides you through the process of setting up the foundation for a stock price prediction project using Amazon SageMaker and AWS services. The project involves obtaining historical stock data, cleaning and processing the data, and setting up the necessary AWS infrastructure.
+This comprehensive documentation guides you through the process of setting up the foundation for a stock price prediction project using Amazon SageMaker and AWS services. The project involves obtaining historical stock data, cleaning and processing the data, and setting up the necessary AWS infrastructure. 📈
 
 ## Requirements
 
@@ -25,7 +25,7 @@ Before you begin, make sure you have the following:
 ### 1.2 Organizing Local Data
 
 1. Create a folder named "Data" in your project directory.
-2. Save the downloaded CSV file into the "Data" folder.
+2. Save the downloaded CSV file into the "Data" folder. 📊
 
 ## Step 2: Data Cleaning
 
@@ -39,7 +39,7 @@ Before you begin, make sure you have the following:
 ### 2.2 Saving Cleaned Data
 
 1. Save the file in the preferred spreadsheet format (e.g., Numbers, Excel).
-2. Export and save the cleaned data as a CSV file with Unicode UTF-8 encoding.
+2. Export and save the cleaned data as a CSV file with Unicode UTF-8 encoding. 💻
 
 ## Step 3: Setting Up AWS Infrastructure
 
@@ -57,7 +57,7 @@ Before you begin, make sure you have the following:
 
 ### 3.3 Checking Domain Status
 
-1. Confirm that the SageMaker domain is "In Service."
+1. Confirm that the SageMaker domain is "In Service." 🚀
 
 ## Step 4: Uploading Data to Amazon S3
 
@@ -69,7 +69,7 @@ Before you begin, make sure you have the following:
 ### 4.2 Uploading Data to S3
 
 1. Open the created bucket and upload the previously cleaned CSV file.
-2. Verify that the file is successfully uploaded.
+2. Verify that the file is successfully uploaded. 🗂️
 
 ## Step 5: SageMaker Canvas
 
@@ -88,5 +88,5 @@ Before you begin, make sure you have the following:
 
 This documentation comprehensively covered the entire process of setting up the foundation for a stock price prediction project. From obtaining data, cleaning it, and establishing AWS infrastructure to utilizing SageMaker Canvas for building and deploying machine learning models.
 
-Stay tuned for the upcoming series of videos, where we will delve deeper into working with SageMaker Canvas and running models on the prepared dataset.
+Stay tuned for the upcoming series of videos, where we will delve deeper into working with SageMaker Canvas and running models on the prepared dataset. 📺
 
