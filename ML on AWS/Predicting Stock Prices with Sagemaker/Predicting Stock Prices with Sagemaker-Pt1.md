@@ -33,13 +33,13 @@ Before you begin, make sure you have the following:
 
 1. Open the CSV file using a spreadsheet tool (e.g., Numbers, Excel, Google Sheets).
 2. Add a new column named "ticker" with the value "AAPL" (or the chosen stock symbol).
-3. Rename columns: "close" to "Market Close," "open" to "Market Open."
+3. Rename columns: "close" to "MarketClose," "open" to "MarketOpen."
 4. Format numerical columns to display as numbers with two decimals.
 
 ### 2.2 Saving Cleaned Data
 
 1. Save the file in the preferred spreadsheet format (e.g., Numbers, Excel).
-2. Export the cleaned data as a CSV file with Unicode UTF-8 encoding.
+2. Export and save the cleaned data as a CSV file with Unicode UTF-8 encoding.
 
 ## Step 3: Setting Up AWS Infrastructure
 
@@ -76,7 +76,7 @@ Before you begin, make sure you have the following:
 ### 5.1 Launching SageMaker Canvas
 
 1. Go to the SageMaker domain in the AWS Management Console.
-2. Click on the domain and select "Canvas" from the available services.
+2. Click on the domain and under `User Profiles` click `Launch, then from within the drop down, select `Canvas`
 3. Wait for the Canvas application to load.
 
 ### 5.2 Dataset Integration
