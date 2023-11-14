@@ -11,6 +11,7 @@ If you're excited to begin these foundational steps for our price prediction pro
 To set up a domain in Amazon SageMaker, log into the AWS Management Console, navigate to SageMaker, and create a domain. This step is crucial for running SageMaker Canvas.
 
 • Once in the domains section, click `Create Domain`
+
 • Then there are two options, `Quick Setup` and `Standard Setup`. For the convenience of this lab, let's choose `Quick Setup` and select `Set Up`
 •
 •
