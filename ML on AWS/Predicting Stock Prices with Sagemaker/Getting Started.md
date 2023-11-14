@@ -5,7 +5,7 @@ Welcome to the Stock Price Predictor project! 🚀 In this project, we'll explor
 ## Project Overview 📊
 We'll be delving into a stock price prediction project using core AWS services. Our journey includes leveraging Amazon S3 for data storage, utilizing a publicly accessible dataset from NASDAQ, employing Amazon SageMaker Canvas for machine learning predictions, and finally, creating a visually appealing dashboard with Amazon QuickSight.
 
-(https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/StockPricePredictor.png?raw=true)
+![](https://github.com/yusufmunircloud/AWS-Projects/blob/main/img/StockPricePredictor.png?raw=true)
 
 ### Project Steps:
 1. **Configuring Prerequisites**: Setting up the necessary configurations and prerequisites to utilize our dataset in AWS.
